@@ -1,0 +1,42 @@
+---
+title: "day 4 afternoon session"
+author: "Eva Newby"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## 
+```{r}
+# load libraries ----
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+
+# check out the column names ----
+names(penguins)
+
+# look at the dimensions of the data frame ----
+dim(penguins)
+
+#get a summary of your data frame ----
+summary(penguins)
+
+# get a summary using {skimr} ----
+skimr::skim(penguins)
+
+# head and tail ----
+head(penguins) 
+tail(penguins)
+
+# pairs plot using GGally ----
+GGally::ggpairs(penguins, columns = 3:6, ggplot2::aes(color = species))
+
+# create a histogram of penguin flipper lengths ----
+ggplot(data = penguins, aes(x = flipper_length_mm, color = species)) +
+  geom_histogram()
+
+```
+
